@@ -1,0 +1,62 @@
+# depslib dependency file v1.0
+1667503115 source:c:\users\hp\desktop\proyecto_carro\final\main.cpp
+	<windows.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<GL/gl.h>
+	<cmath>
+	<bits/stdc++.h>
+	"BmpLoader.h"
+	<string>
+	<sstream>
+
+1667487209 source:c:\users\hp\desktop\proyecto_carro\final\src\bmploader.cpp
+	"BmpLoader.h"
+	<stdio.h>
+	<iostream>
+
+1667487209 c:\users\hp\desktop\proyecto_carro\final\include\bmploader.h
+	<windows.h>
+
+1660336323 c:\program files\codeblocks\mingw\include\gl\glut.h
+	"freeglut_std.h"
+
+1660336323 c:\program files\codeblocks\mingw\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1668566031 source:c:\users\erick\onedrive\escritorio\proyecto_carro\final\main.cpp
+	<windows.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<GL/gl.h>
+	<cmath>
+	<bits/stdc++.h>
+	"BmpLoader.h"
+	<string>
+	<sstream>
+
+1667487209 c:\users\erick\onedrive\escritorio\proyecto_carro\final\include\bmploader.h
+	<windows.h>
+
+1667487209 source:c:\users\erick\onedrive\escritorio\proyecto_carro\final\src\bmploader.cpp
+	"BmpLoader.h"
+	<stdio.h>
+	<iostream>
+
+1668566099 source:c:\users\erick\onedrive\escritorio\proyecto_carro\final\src\rgbimage.cpp
+	"RgbImage.h"
+	<windows.h>
+	"GL/gl.h"
+
+1668566009 c:\users\erick\onedrive\escritorio\proyecto_carro\final\include\rgbimage.h
+	<stdio.h>
+	<assert.h>
+
