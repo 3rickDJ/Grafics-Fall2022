@@ -1845,28 +1845,6 @@ int main(int argc, char *argv[]){
     glEnable(GL_LIGHTING);
 init();
     ///llamado de las texturas desde el folder de documentos madre del proyecto
-
-  /*LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\road.bmp");///1
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\grass.bmp");///2
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\pavement.bmp");///3
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\lastbuilding.bmp");///4
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\thirdbuilding1.bmp");///5
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\RedWhiteStripe.bmp");///6
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\Steel.bmp");///7
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\stainless.bmp");///8
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\backglas.bmp");///9
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\numberplate.bmp");///10
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\redlight.bmp");///11
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\rock.bmp");///12
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\buildings3.bmp");///13
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\buildings4.bmp");///14
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\treeside.bmp");///15
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\ramp.bmp");///16
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\football.bmp");///17
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\fire1.bmp");///18
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\obstacle.bmp");///19
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\design.bmp");///20
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\cielo.bmp");*/
     glutMainLoop();
     return EXIT_SUCCESS;
 }
