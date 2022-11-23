@@ -1,16 +1,21 @@
 # depslib dependency file v1.0
-1667503115 source:c:\users\hp\desktop\proyecto_carro\final\main.cpp
+1668729818 source:c:\users\hp\desktop\proyecto_carro\final\main.cpp
 	<windows.h>
 	<stdlib.h>
 	<GL/glut.h>
 	<GL/gl.h>
-	<cmath>
 	<bits/stdc++.h>
-	"BmpLoader.h"
+	"RgbImage.h"
 	<string>
 	<sstream>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<math.h>
+	<stdio.h>
+	"RgbImage.h"
 
-1667487209 source:c:\users\hp\desktop\proyecto_carro\final\src\bmploader.cpp
+1668400951 source:c:\users\hp\desktop\proyecto_carro\final\src\bmploader.cpp
 	"BmpLoader.h"
 	<stdio.h>
 	<iostream>
@@ -32,31 +37,45 @@
 	<GL/glu.h>
 	<stdlib.h>
 
-1668566031 source:c:\users\erick\onedrive\escritorio\proyecto_carro\final\main.cpp
-	<windows.h>
-	<stdlib.h>
-	<GL/glut.h>
-	<GL/gl.h>
-	<cmath>
-	<bits/stdc++.h>
-	"BmpLoader.h"
-	<string>
-	<sstream>
-
-1667487209 c:\users\erick\onedrive\escritorio\proyecto_carro\final\include\bmploader.h
-	<windows.h>
-
-1667487209 source:c:\users\erick\onedrive\escritorio\proyecto_carro\final\src\bmploader.cpp
-	"BmpLoader.h"
-	<stdio.h>
-	<iostream>
-
-1668566099 source:c:\users\erick\onedrive\escritorio\proyecto_carro\final\src\rgbimage.cpp
+1668727131 source:c:\users\hp\desktop\proyecto_carro\final\src\rgbimage.cpp
 	"RgbImage.h"
 	<windows.h>
 	"GL/gl.h"
 
-1668566009 c:\users\erick\onedrive\escritorio\proyecto_carro\final\include\rgbimage.h
+1668727153 c:\users\hp\desktop\proyecto_carro\final\include\rgbimage.h
 	<stdio.h>
 	<assert.h>
+
+1668729820 source:c:\users\erick\onedrive\escritorio\proyecto_carro\final\main.cpp
+	<windows.h>
+	<stdlib.h>
+	<GL/glut.h>
+	<GL/gl.h>
+	<bits/stdc++.h>
+	"RgbImage.h"
+	<string>
+	<sstream>
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<math.h>
+	<stdio.h>
+	"RgbImage.h"
+
+1668727154 c:\users\erick\onedrive\escritorio\proyecto_carro\final\include\rgbimage.h
+	<stdio.h>
+	<assert.h>
+
+1668400952 source:c:\users\erick\onedrive\escritorio\proyecto_carro\final\src\bmploader.cpp
+	"BmpLoader.h"
+	<stdio.h>
+	<iostream>
+
+1667487210 c:\users\erick\onedrive\escritorio\proyecto_carro\final\include\bmploader.h
+	<windows.h>
+
+1668727132 source:c:\users\erick\onedrive\escritorio\proyecto_carro\final\src\rgbimage.cpp
+	"RgbImage.h"
+	<windows.h>
+	"GL/gl.h"
 

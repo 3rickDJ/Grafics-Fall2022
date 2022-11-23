@@ -1,7 +1,8 @@
 #include "BmpLoader.h"
 #include<stdio.h>
 #include <iostream>
-
+//esta clase esta dedicada a la implementacion
+//de las texturas para los objetos de este videojuego
 BmpLoader::BmpLoader(const char* filename){
 
     FILE *file=0;   file=fopen(filename, "rb");

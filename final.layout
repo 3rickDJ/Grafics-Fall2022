@@ -2,56 +2,58 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="src\BmpLoader.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\RgbImage.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="968" topLine="8" />
+			<Cursor1 position="871" topLine="4" />
 		</Cursor>
 	</File>
-	<File name="include\BmpLoader.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\RgbImage.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="176" topLine="0" />
+			<Cursor1 position="4914" topLine="21" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+	<File name="include\BmpLoader.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="41888" topLine="661" />
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1720" topLine="39" />
 		</Cursor>
 		<Folding>
-			<Collapse line="79" />
-			<Collapse line="90" />
-			<Collapse line="110" />
-			<Collapse line="131" />
-			<Collapse line="144" />
-			<Collapse line="159" />
-			<Collapse line="168" />
-			<Collapse line="229" />
-			<Collapse line="245" />
-			<Collapse line="251" />
-			<Collapse line="256" />
-			<Collapse line="268" />
-			<Collapse line="306" />
-			<Collapse line="319" />
-			<Collapse line="342" />
-			<Collapse line="363" />
-			<Collapse line="402" />
-			<Collapse line="451" />
-			<Collapse line="460" />
-			<Collapse line="559" />
-			<Collapse line="616" />
-			<Collapse line="635" />
-			<Collapse line="665" />
+			<Collapse line="125" />
+			<Collapse line="145" />
+			<Collapse line="166" />
+			<Collapse line="179" />
+			<Collapse line="194" />
+			<Collapse line="203" />
+			<Collapse line="264" />
+			<Collapse line="280" />
+			<Collapse line="286" />
+			<Collapse line="291" />
+			<Collapse line="303" />
+			<Collapse line="364" />
+			<Collapse line="387" />
+			<Collapse line="447" />
+			<Collapse line="496" />
+			<Collapse line="505" />
+			<Collapse line="604" />
+			<Collapse line="661" />
 			<Collapse line="686" />
-			<Collapse line="757" />
-			<Collapse line="785" />
-			<Collapse line="875" />
-			<Collapse line="985" />
-			<Collapse line="999" />
-			<Collapse line="1012" />
-			<Collapse line="1082" />
-			<Collapse line="1101" />
-			<Collapse line="1135" />
-			<Collapse line="1736" />
-			<Collapse line="1749" />
+			<Collapse line="716" />
+			<Collapse line="737" />
+			<Collapse line="808" />
+			<Collapse line="836" />
+			<Collapse line="926" />
+			<Collapse line="1036" />
+			<Collapse line="1050" />
+			<Collapse line="1063" />
+			<Collapse line="1133" />
+			<Collapse line="1152" />
+			<Collapse line="1223" />
+			<Collapse line="1705" />
+			<Collapse line="1812" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>

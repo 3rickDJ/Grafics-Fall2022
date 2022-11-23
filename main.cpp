@@ -2,28 +2,63 @@
 #include <stdlib.h>
 #include <GL/glut.h>
 #include <GL/gl.h>
-#include <cmath>
+//#include <cmath>
 #include <bits/stdc++.h>
-#include "BmpLoader.h"
+//#include "BmpLoader.h"
+#include "RgbImage.h"
 #include <string>
 #include <sstream>
+
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
+#include <GL/glut.h>
+#endif
+
+#include <stdlib.h>
+
+#include <math.h>
+#include <stdio.h>
+
+#include "RgbImage.h"
+
+//se define la cantidad de texturas que se manejaran
+#define NTextures 500
+
 //BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA
 //GRAFICACION
 
 ///INTEGRANTES:
 //1.CRUZ LULE MIGUEL ANGEL    MATRICULA: 202080748
 //2.JAVIER MONTERO ROSAS      MATRICULA: 202047629
-//3.
+//3.ERICK DE JESUS
 
 ///ESTE PROYECTO FINAL CONSTA DE LA PROGRAMACION DE UN VIDEOJUEGO DE UN COCHE
 ///QUE TRATA DE EVITAR OBSTACULOS EN UNA CALLE, ADEMAS DE QUE GANARA PUNTOS POR EL
 ///TIEMPO DE SUPERVIVENCIA AL EVITAR EL ATAQUE DE VARIOS OBSTACULOS
 
+
+
+///------------------------------------------------------------------------------------------///
+//puntuacion maxima de cada integrante del equipo
+//1.-miguel:  1083 puntos
+//2.-javier:
+//3.-erick:
 using namespace std;
 unsigned int ID;
 
-float rot=0;
+//se define la cantidad de texturas que se manejaran
+#define NTextures 500
+GLuint	texture[NTextures];
 
+
+float rot=0;
+float X_MIN=-50;
+float X_MAX=50;
+float Y_MIN=-50;
+float Y_MAX=50;
+float Z_MIN=-50;
+float Z_MAX=50;
 bool l_on1 = true;
 bool l_on2 = true;
 bool l_on3 = true;
@@ -35,7 +70,7 @@ bool specflag=true;
 bool pause = false;
 bool start= true;
 
-
+char* filename0 = "textura0.bmp";
 
 static float zz = 50;
 static float yy=1;
@@ -304,16 +339,26 @@ void drawcube(float cr, float cg, float cb,int n=1, bool e=false){
 }
 
 ///Cargado de Texturas
-void LoadTexture(const char*filename){
-    glGenTextures(1, &ID);
-    glBindTexture(GL_TEXTURE_2D, ID);
-    glPixelStorei(GL_UNPACK_ALIGNMENT, ID);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+void LoadTexture(char *filename, int index){
+    glClearColor (0.0, 0.0, 0.0, 0.0);
+	glShadeModel(GL_FLAT);
+	//glEnable(GL_DEPTH_TEST);
+
+	RgbImage theTexMap( filename );
+
+    //generate an OpenGL texture ID for this texture
+    glGenTextures(1, &texture[index]);
+    //bind to the new texture ID
+    glBindTexture(GL_TEXTURE_2D, texture[index]);
+
+
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    BmpLoader bl(filename);
-    gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, bl.iWidth, bl.iHeight, GL_RGB, GL_UNSIGNED_BYTE, bl.textureData );
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexImage2D(GL_TEXTURE_2D, 0, 3, theTexMap.GetNumCols(), theTexMap.GetNumRows(), 0,
+                     GL_RGB, GL_UNSIGNED_BYTE, theTexMap.ImageData());
+    theTexMap.Reset();
 }
 
 ///Cilindro 3D
@@ -364,9 +409,9 @@ void circle_3D(GLdouble radius){
 void Arbol(){
     int randm;
     randm = (rand() % 9) + 8;
-
+    glEnable(GL_TEXTURE_2D);
     glPushMatrix();
-    glBindTexture(GL_TEXTURE_2D,15);
+    glBindTexture(GL_TEXTURE_2D, texture[0]);
     glEnable(GL_TEXTURE_2D);
     Cilindro3D(0.4,0.3,randm);
     glDisable(GL_TEXTURE_2D);
@@ -615,21 +660,27 @@ void spotlight(float x,float y, float z,float spt_cutoff){
 
 ///Ejes
 void axis(void){
-
-
-    glBegin(GL_LINES);
-    glColor3f (1.0, 0.0, 0.0); ///rojo es X
-    glVertex3f(0.0, 0.0, 0.0);
-    glVertex3f(50.0, 0.0, 0.0);
-
-    glColor3f (0.0, 1.0, 0.0);
-    glVertex3f(0.0, 0.0, 0.0);
-    glVertex3f(0.0, 50.0, 0.0); ///verde es Y
-
-    glColor3f (0.0, 0.0, 1.0);
-    glVertex3f(0.0, 0.0, 0.0);
-    glVertex3f(0.0, 0.0, 50.0); ///azul es Z
-    glEnd();
+//X axis in red
+     glBegin(GL_LINES);
+       glColor3f(1.0f,0.0f,0.0f);
+       glVertex3f(X_MIN,0.0,0.0);
+       glColor3f(1.0f,0.0f,0.0f);
+       glVertex3f(X_MAX,0.0,0.0);
+     glEnd();
+     //Y axis in green
+     glBegin(GL_LINES);
+       glColor3f(0.0f,1.0f,0.0f);
+       glVertex3f(0.0,Y_MIN,0.0);
+       glColor3f(0.0f,1.0f,0.0f);
+       glVertex3f(0.0,Y_MAX,0.0);
+     glEnd();
+     //Z axis in blue
+     glBegin(GL_LINES);
+       glColor3f(0.0f,0.0f,1.0f);
+       glVertex3f(0.0,0.0,Z_MIN);
+       glColor3f(0.0f,0.0f,1.0f);
+       glVertex3f(0.0,0.0,Z_MAX);
+     glEnd();
 }
 
 ///Piso
@@ -1159,7 +1210,7 @@ void textDisplay(string str,int x,int y,int z){
 
 float scoresave=0;
 float rotat;
-float life=3;
+float life=5;
 
 string str="";
 string strlife="";
@@ -1171,12 +1222,13 @@ float speed=2.0;
 
 ///Display
 static void display(void){
-    //axis();
+
     //string st;
     const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
     const double a = t*90.0;
-    glClearColor(.2, 0.593, .85540, 1.0);
+    //glClearColor(.2, 0.593, .85540, 1.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    axis();
     /// GLUE LOOK AT
     glLoadIdentity();
 
@@ -1210,30 +1262,32 @@ static void display(void){
     stringtext.str("");
     if(life==0.0){
         pause=false;
+
         string str2;
         str2="GAME OVER BUAPO!!";
-        textDisplay(str2,x_look-1,3,zz);
+        textDisplay(str2,x_look-3.5,3,zz);
         stringstream lifeoutput;
         lifeoutput<<scoresave;
-        string str3;
-        str3="PUNTUACION: " + lifeoutput.str();
 
-        textDisplay(str3,x_look-1,2,zz);
-                string str4;
+        string str3;
+        str3="PUNTUACION: " + lifeoutput.str()+" LOBO-PUNTOS";
+        textDisplay(str3,x_look-3.5,2,zz);
+
+        string str4;
         str4="REINTENTAR (Z)";
-        textDisplay(str4,x_look-1,1,zz);
+        textDisplay(str4,x_look-3.5,1,zz);
     }
     else{
         if(start){
             string pausestr;
             pausestr="INICIAR (P) ||  PAUSAR (E)";
-            textDisplay(pausestr,x_look,3.5,zz);
+            textDisplay(pausestr,x_look-3.5,3.5,zz);
             pausestr="CONTROLES:";
-            textDisplay(pausestr,x_look,2.5,zz);
+            textDisplay(pausestr,x_look-3.5,2.5,zz);
 
             string contr2;
             contr2="A(IZQ), W(ARRIBA), D(DER), S(ABAJO)";
-            textDisplay(contr2,x_look,1.5,zz);
+            textDisplay(contr2,x_look-3.5,1,zz);
 
 
         }
@@ -1245,19 +1299,20 @@ static void display(void){
             else{
                 stringtext<<scoresave;
                 str="Puntuacion : " + stringtext.str();
-                strlife="VIDA restante"+lifee.str();
+                strlife="VIDa"+lifee.str();
 
                 string pausestr;
                 pausestr="Presione 'E' para reanudar..";
-                textDisplay(pausestr,x_look-2,2,zz);
+                textDisplay(pausestr,x_look-3.5,2,zz);
             }
 
 
             stringstream lifeoutput;
             lifeoutput<<life;
             string str1;
-            str1="Vida: " + lifeoutput.str()+"/3";
+            str1="VIDAS: " + lifeoutput.str()+"/5";
             textDisplay(str1,x_look-3.5,3,zz);
+
 
 
             textDisplay(str,x_look,3,zz);
@@ -1275,12 +1330,12 @@ static void display(void){
 
 
         ///código de túnel y texturizado..
-        glPushMatrix();
-        glBindTexture(GL_TEXTURE_2D,20);
-        glEnable(GL_TEXTURE_2D);
-        bottleBezier();
-        glDisable(GL_TEXTURE_2D);
-        glPopMatrix();
+        //glPushMatrix();
+        //glBindTexture(GL_TEXTURE_2D,20);
+        //glEnable(GL_TEXTURE_2D);
+        //bottleBezier();
+        //glDisable(GL_TEXTURE_2D);
+        //glPopMatrix();
         glPopMatrix();
         glPopMatrix();
     }
@@ -1626,6 +1681,27 @@ static void display(void){
     glutSwapBuffers();
 }
 
+void init()
+{
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+//    gluPerspective(FOVY, (GLfloat)WIDTH/HEIGTH, ZNEAR, ZFAR);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+  //  gluLookAt(EYE_X,EYE_Y,EYE_Z,CENTER_X,CENTER_Y,CENTER_Z,UP_X,UP_Y,UP_Z);
+    glClearColor(0,0,0,0);
+
+    glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
+    glShadeModel(GL_FLAT);
+    glEnable(GL_DEPTH_TEST);
+    LoadTexture(filename0,0);
+    //LoadTexture(filename1,1);
+    //loadTextureFromFile(filename2,2);
+    //loadTextureFromFile(filename3,3);
+    //loadTextureFromFile(filename4,4);
+    //loadTextureFromFile(filename5,5);
+}
+
 ///Teclado
 static void key(unsigned char key, int x, int y){
     switch (key){
@@ -1751,12 +1827,13 @@ int main(int argc, char *argv[]){
 
     glutInit(&argc, argv);
     glutInitWindowSize(640,480);
-    glutInitWindowPosition(10,10);
+    glutInitWindowPosition(100,10);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGBA);
-    glutInitWindowPosition (100, 100);
-    glutCreateWindow("PARA PS5");
+    glutInitWindowPosition(500, 100);
+    glutCreateWindow("PROYECTO FINAL GRAFICACION_NOMBRE DEL JUEGO: Extreme Object Simulador 3000");
+
     glutReshapeFunc(resize);
-    //glutReshapeFunc(reshape);
+    //glutReshapeFunc(reshape)
     glutDisplayFunc(display);
     glutKeyboardFunc(key);
     glutIdleFunc(idle);
@@ -1765,10 +1842,10 @@ int main(int argc, char *argv[]){
     glEnable(GL_NORMALIZE);
     glEnable(GL_BLEND);
     glEnable(GL_LIGHTING);
-
+init();
     ///llamado de las texturas desde el folder de documentos madre del proyecto
 
-    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\road.bmp");///1
+  /*LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\road.bmp");///1
     LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\grass.bmp");///2
     LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\pavement.bmp");///3
     LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\lastbuilding.bmp");///4
@@ -1788,6 +1865,7 @@ int main(int argc, char *argv[]){
     LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\fire1.bmp");///18
     LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\obstacle.bmp");///19
     LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\design.bmp");///20
+    LoadTexture("C:\\Users\\Hp\\Desktop\\Proyecto_carro\\final\\cielo.bmp");*/
     glutMainLoop();
     return EXIT_SUCCESS;
 }
