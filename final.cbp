@@ -45,9 +45,11 @@
 			<Add directory="C:/Program Files/CodeBlocks/MinGW/lib" />
 		</Linker>
 		<Unit filename="include/BmpLoader.h" />
+		<Unit filename="include/Figura.h" />
 		<Unit filename="include/RgbImage.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/BmpLoader.cpp" />
+		<Unit filename="src/Figura.cpp" />
 		<Unit filename="src/RgbImage.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

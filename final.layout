@@ -7,9 +7,9 @@
 			<Cursor1 position="871" topLine="4" />
 		</Cursor>
 	</File>
-	<File name="include\RgbImage.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4914" topLine="21" />
+			<Cursor1 position="27457" topLine="1045" />
 		</Cursor>
 	</File>
 	<File name="include\BmpLoader.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -17,43 +17,9 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+	<File name="include\RgbImage.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1720" topLine="39" />
+			<Cursor1 position="4914" topLine="21" />
 		</Cursor>
-		<Folding>
-			<Collapse line="125" />
-			<Collapse line="145" />
-			<Collapse line="166" />
-			<Collapse line="179" />
-			<Collapse line="194" />
-			<Collapse line="203" />
-			<Collapse line="264" />
-			<Collapse line="280" />
-			<Collapse line="286" />
-			<Collapse line="291" />
-			<Collapse line="303" />
-			<Collapse line="364" />
-			<Collapse line="387" />
-			<Collapse line="447" />
-			<Collapse line="496" />
-			<Collapse line="505" />
-			<Collapse line="604" />
-			<Collapse line="661" />
-			<Collapse line="686" />
-			<Collapse line="716" />
-			<Collapse line="737" />
-			<Collapse line="808" />
-			<Collapse line="836" />
-			<Collapse line="926" />
-			<Collapse line="1036" />
-			<Collapse line="1050" />
-			<Collapse line="1063" />
-			<Collapse line="1133" />
-			<Collapse line="1152" />
-			<Collapse line="1223" />
-			<Collapse line="1705" />
-			<Collapse line="1812" />
-		</Folding>
 	</File>
 </CodeBlocks_layout_file>
