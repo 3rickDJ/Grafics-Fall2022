@@ -1226,7 +1226,6 @@ static void display(void){
 
     //string st;
     const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
-    const double a = t*90.0;
     //glClearColor(.2, 0.593, .85540, 1.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     axis();
