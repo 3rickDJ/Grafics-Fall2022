@@ -31,7 +31,7 @@
 ///INTEGRANTES:
 //1.CRUZ LULE MIGUEL ANGEL    MATRICULA: 202080748
 //2.JAVIER MONTERO ROSAS      MATRICULA: 202047629
-//3.ERICK DE JESUS
+//3.ERICK DE JESUS            MATRICULA: 202033682
 
 ///ESTE PROYECTO FINAL CONSTA DE LA PROGRAMACION DE UN VIDEOJUEGO DE UN COCHE
 ///QUE TRATA DE EVITAR OBSTACULOS EN UNA CALLE, ADEMAS DE QUE GANARA PUNTOS POR EL
@@ -272,6 +272,7 @@ static void resize(int width, int height){
 
     //VARIABLE FLOTANTE
     float d=1;
+    //Esta function multiplica la matriz por otra de perspectiva
     glFrustum(-ar*d, ar*d, -1.0*d, 1.0*d, 2.0, 1000.0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity() ;
