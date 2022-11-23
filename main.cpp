@@ -278,16 +278,6 @@ static void resize(int width, int height){
     glLoadIdentity() ;
 }
 
-///V_CUBO
-static GLfloat v_cube[8][3] ={
-    {0,0,0},{0,0,1},{0,1,0},{0,1,1},
-    {1,0,0},{1,0,1},{1,1,0},{1,1,1}
-};
-
-///C_IND
-static GLubyte c_ind[6][4] ={
-    {3,1,5,7},{2,0,1,3},{7,5,4,6},{2,3,7,6},{1,0,4,5},{6,4,0,2}
-};
 
 ///obtenerNormal3p
 static void getNormal3p(GLfloat x1, GLfloat y1, GLfloat z1, GLfloat x2, GLfloat y2, GLfloat z2, GLfloat x3, GLfloat y3, GLfloat z3){
@@ -1140,36 +1130,8 @@ void bulbinbuilding(){
 
 ///Alcantarilla
 void alcantarilla(){
-
-    glPushMatrix();
-    glBindTexture(GL_TEXTURE_2D,15);
-    glEnable(GL_TEXTURE_2D);
-    glScaled(3,0.1,21);
-    drawcube(1,1,1,1);
-    glDisable(GL_TEXTURE_2D);
-    glPopMatrix();
-
-    for(int i=0; i<15; i++){
-        glPushMatrix();
-        glBindTexture(GL_TEXTURE_2D,15);
-        glEnable(GL_TEXTURE_2D);
-        glTranslatef(0.2,0,i*1.5);
-        glScaled(0.1,2,0.1);
-        drawcube(1,1,1,1);
-        glDisable(GL_TEXTURE_2D);
-        glPopMatrix();
-    }
-    for(int i=0; i<15; i++){
-        glPushMatrix();
-        glBindTexture(GL_TEXTURE_2D,15);
-        glEnable(GL_TEXTURE_2D);
-        glTranslatef(2.7,0,i*1.5);
-        glScaled(0.1,2,0.1);
-        drawcube(1,1,1,1);
-        glDisable(GL_TEXTURE_2D);
-        glPopMatrix();
-    }
-
+    Alcantarilla alcanta;
+    alcanta.draw();
 }
 
 ///Texto de Display
