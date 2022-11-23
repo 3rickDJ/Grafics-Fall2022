@@ -1048,18 +1048,6 @@ void sphere(){
     glutSolidSphere (1.0, 20, 16);
 }
 
-///Cono
-void cone(){
-    glRotatef(-90,1,0,0);
-    glEnable(GL_TEXTURE_GEN_S); //habilitar la generación de coordenadas de textura
-    glEnable(GL_TEXTURE_GEN_T);
-    glBindTexture(GL_TEXTURE_2D,2);
-    glEnable(GL_TEXTURE_2D);
-    glutSolidCone(9,10,16,16);
-    glDisable(GL_TEXTURE_GEN_S); //habilitar la generación de coordenadas de textura
-    glDisable(GL_TEXTURE_GEN_T);
-    glDisable(GL_TEXTURE_2D);
-}
 
 ///Cilindrokata
 void cylinderkata(){
@@ -1330,12 +1318,7 @@ static void display(void){
 
 
         ///código de túnel y texturizado..
-        //glPushMatrix();
-        //glBindTexture(GL_TEXTURE_2D,20);
-        //glEnable(GL_TEXTURE_2D);
-        //bottleBezier();
-        //glDisable(GL_TEXTURE_2D);
-        //glPopMatrix();
+
         glPopMatrix();
         glPopMatrix();
     }
