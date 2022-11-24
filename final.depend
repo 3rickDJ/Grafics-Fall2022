@@ -84,3 +84,15 @@
 
 1669168997 c:\users\erick\onedrive\escritorio\proyecto_carro\final\include\figura.h
 
+1669226633 source:c:\users\erick\onedrive\escritorio\proyecto_carro\final\src\alcantarilla.cpp
+	"Alcantarilla.h"
+	<GL/glut.h>
+	<GL/gl.h>
+	"Cubo.h"
+
+1669224594 c:\users\erick\onedrive\escritorio\proyecto_carro\final\include\alcantarilla.h
+
+1669226813 c:\users\erick\onedrive\escritorio\proyecto_carro\final\include\cubo.h
+	<GL/glut.h>
+	<GL/gl.h>
+

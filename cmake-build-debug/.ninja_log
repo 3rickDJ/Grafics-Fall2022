@@ -1,0 +1,5 @@
+# ninja log v5
+5	422	6909530002924617	build.ninja	31e69ef37d5e170c
+7	236	6909530007218041	CMakeFiles/main.dir/src/Figura.cpp.obj	7c768f9a46bab4ed
+1	1916	6909530024034650	CMakeFiles/main.dir/src/RgbImage.cpp.obj	1a12351fd3377d5
+16	2238	6909530027237316	CMakeFiles/main.dir/src/BmpLoader.cpp.obj	5d964f2a9ffec083
